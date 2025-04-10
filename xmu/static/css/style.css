@@ -1,0 +1,364 @@
+/* 初始化默认的格式*/
+* {
+    margin: 0; /* 外边距 */
+    padding: 0; /* 内边距 */
+    box-sizing: border-box; /* 设置 box 的格式为整体大小包含内外边距 */
+    font-family: "FangSong", "仿宋", serif; /* 设置字体的形式 */
+}
+
+/* 设置主体和背景图片 */
+body {
+    background-color: #f0f0f0; /* 背景颜色 */
+    line-height: 1.6; /* 设置行高 */
+    text-align: center;  /* 文本居中 */
+
+    background-image: url('../images/bg.jpg'); /* 设置背景图 */
+    background-size: cover; /* 填满屏幕，可以剪切 */
+    background-repeat: no-repeat; /* 不重复填充 */
+    background-position: center center; /* 居中显示 */
+    background-attachment: fixed; /* 页面滚动时背景固定 */
+}
+
+/* 设置导航栏 */
+header {
+    display: flex; /* flex 布局 */
+    justify-content: space-between; /* 内部元素等间距间隔开 */
+    align-items: center; /* y 轴居中 */
+    padding: 5px 10px; /* 内边距 */
+    background-color: #add8e6; /* 背景色 */
+    position: fixed; /* 固定，不随滚动屏幕改变 */
+    top: 0; /* 固定在顶部，距离视口的位置 */
+    left: 0;
+    right: 0;
+    z-index: 10; /* 显示优先级，显示在其他元素上面 */
+    width: 100%; /* 宽度占满整个屏幕，不指定的话会根据元素调整，即使设置了 left 和 right */
+}
+
+header .logo img {
+    width: 50%; /* 占 flex-item 的一半 */
+    display: block; /* 把图片变成块级元素 */
+    margin-left: 0; /* 左对齐 */
+}
+
+nav ul {
+    list-style: none; /* 去除文字前的符号 */
+    display: flex; /* 内部为 flex 布局 */
+    align-items: center; /* y 轴居中 */
+}
+
+nav ul li {
+    margin: 0px 20px; /* 每个标题的两边留空隙 */
+    position: relative; /* 相对位置 */
+}
+
+nav ul li a {
+    text-decoration: none; /* 去掉链接的下划线 */
+    padding: 12px 6px;
+    color: black; /* 黑色字体 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: bold; /* 加粗 */
+    border-radius: 10px; /* 圆角 */
+    border: none; /* 不要边框 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 选中的时候背景颜色过渡，文字颜色过渡 */
+}
+
+nav ul li a:hover {
+    background-color: #bdd8ff; /* 选中状态的背景颜色 */
+    color: #fff; /* 选中状态白色 */
+}
+
+nav ul li a.active {
+    background-color: #bdd8ff; /* 激活状态的背景颜色 */
+    color: #fff; /* 激活状态白色 */
+}
+
+nav ul li .dropdown {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li .dropdown .arrow {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li .dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown-content li {
+    padding: 10px 20px;
+}
+
+nav ul li .dropdown-content li a {
+    color: #000;
+}
+
+/* 设置主页 */
+.hero {
+    height: 70vh; /*浏览器窗口的 70% */
+    display: flex; /* flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    text-align: center; /* 文本居中 */
+    color: black; /* 设置为黑色 */
+}
+
+.hero-content h1 {
+    font-size: 60px; /* 设置字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
+
+.hero-content p {
+    font-size: 24px; /* 设置字体大小 */
+    margin-bottom: 30px; /* 底部空隙外边距 */
+}
+
+.cta-button {
+    padding: 12px 25px; /* 内边距 */
+    font-size: 18px; /* 设置字体大小 */
+    background-color: #add8e6; /* 背景色 */
+    color: black; /* 文字颜色设置为黑色 */
+    border: none; /* 不要边框 */
+    cursor: pointer; /* 鼠标移动到上面显示小手指 */
+    border-radius: 10px; /* 圆角 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 选中的时候背景颜色过渡，文字颜色过渡 */
+}
+
+.cta-button:hover {
+    background-color: #bdd8ff; /* 选中状态的背景颜色 */
+    color: white; /* 选中状态白色 */
+}
+
+/* 设置研究方向，基本全是文字 */
+.research-content {
+    padding: 50px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    background-color: #f0f0f0; /* 背景色 */
+}
+
+.research-content h3 {
+    font-size: 24px; /* h3 标签的字体大小 */
+    margin-bottom: 15px; /* 底部空隙外边距 */
+}
+
+.research-content ul {
+    list-style: none; /* 去除文字前的符号 */
+    font-size: 18px; /* 字体大小 */
+    margin-top: 20px; /* 顶部空隙外边距 */
+}
+.research_directions h2 {
+    padding: 80px 0px 0px 0px; /* 增加顶部间距，露出背景图，跳转的时候正好露出标题 */
+    font-size: 32px; /* h2 标签的字体大小 */
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景，能看到底图 */
+}
+/* 设置图片展示 */
+.gallery {
+    padding: 100px; /* 整个类的 padding */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+.gallery h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
+
+.gallery-row {
+    display: flex; /* flex 布局 */
+    justify-content: center; /* 水平居中 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+}
+
+.gallery-row .gallery-item {
+    width: 20%; /* 每个 item 的宽度 */
+    margin: 0 1%; /* 上下，左右间距 */
+}
+
+.gallery-row .gallery-item img {
+    width: 100%; /* 每个图片占 item 宽度的多少 */
+    height: 100%; /* 每个图片占 item 高度的多少 */
+    object-fit: cover; /* 保持图片的宽高比例，放大图片使其填满容器，多余的部分会被裁剪 */
+}
+/* 设置结果展示 */
+.result {
+    padding: 100px; /* 整个类的 padding */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+.result-row {
+    display: block; /* block 布局 */
+}
+
+.result-row .result-item {
+    width: 50%; /* 每个 item 的宽度 */
+    margin: 10px auto; /* 每个 box 上下间距，左右相同，放在中间 */
+}
+
+.result-row .result-item img {
+    width: 100%; /* 占掉 box 的所有 */
+    height: auto; /* 高度自适应 */
+}
+
+.result-text h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+}
+
+.hr {
+    margin-top: 5px; /* hr */
+}
+/* 设置论文格式 */
+.paper {
+    padding: 100px 0; /* 内部间距 */
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景，能看到底图 */
+}
+
+.paper-text h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+    font-weight: bold; /* 加粗 */
+    text-align: center; /* 文本居中 */
+}
+
+.paper-columns {
+    column-count: 2; /* 两列 */
+    column-gap: 40px; /* 两列之间的间距 */
+    padding: 0 10px; /* 两边间距 */
+}
+
+.paper-item {
+    display: block; /* block 布局 */
+    font-size: 18px; /* 字体大小 */
+    color: black; /* 文本颜色 */
+    text-decoration: none; /* 去除下划线 */
+    margin-bottom: 10px; /* 底部间距 */
+}
+
+.paper-item:hover {
+    text-decoration: underline; /* 选中的时候显示下划线 */
+}
+
+.address-section {
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+    border-radius: 10px; /* 圆角 */
+}
+
+.address-section h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+    font-weight: bold; /* 加粗 */
+    text-align: center; /* 文本居中 */
+}
+
+.address-text {
+    font-size: 18px; /* 字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+}
+
+.address-text a {
+    text-decoration: none; /* 去除下划线 */
+    color: black; /* 文本颜色 */
+}
+
+.address-image {
+    max-width: 40%; /* 最大宽度 */
+    height: auto; /* 高度自适应 */
+    display: block; /* block 布局 */
+    margin: 0 auto; /* 居中 */
+    border-radius: 8px; /* 圆角 */
+}
+
+/* 底部导航栏 */
+footer {
+    text-align: center; /* 文本居中 */
+    padding: 20px; /* 内部间距 */
+    background-color: #add8e6; /* 背景色 */
+    color: white; /* 文本颜色 */
+}
+
+.contact {
+    padding: 100px 0px; /* 内部间距 */
+    height: 50vh; /* 高度占屏幕50% */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+.contact-container {
+    display: flex; /* flex 布局 */
+    flex-wrap: wrap; /* 换行 */
+    margin: 0 auto; /* 居中 */
+    justify-content: space-between; /* 内部元素等间距间隔开 */
+    justify-content: center; /* 文本居中 */
+    width: 50%; /* 宽度占屏幕50% */
+    gap: 40px; /* 内部元素间隔开 */
+}
+
+.contact-item {
+    padding: 40px; /* 内部间距 */
+    border-radius: 8px; /* 圆角 */
+    flex: 1 1 calc(50% - 40px); /* 可以放大和缩小，占容器一半宽度减去 40 px */
+    max-width: calc(50% - 40px); /* 最大宽度占容器一半宽度减去 40 px */
+    box-sizing: border-box; /* 设置 box 的形式 */
+    text-align: left; /* 文本居左 */
+}
+
+.contact-item button, .contact-item input[type="submit"] {
+    padding: 10px 15px; /* 内部间距 */
+    background-color: #333; /* 背景色 */
+    color: #fff; /* 文本颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时的样式 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 选中的时候背景颜色过渡，文字颜色过渡 */
+}
+
+.contact-item button:hover, .contact-item input[type="submit"]:hover {
+    background-color: #555; /* 鼠标悬停时的背景颜色 */
+    background-color: #bdd8ff; /* 激活状态的背景颜色 */
+}
+
+.form-group {
+    margin-bottom: 15px; /* 底部间距 */
+}
+
+label {
+    display: block; /* block 布局 */
+    margin-bottom: 5px; /* 底部间距 */
+}
+/*  设计输入框的格式 */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* 占满父元素的宽度 */
+    padding: 10px; /* 内部间距，留白 */
+    border: 1px solid #f0f0f0; /* 边框颜色 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #e8e8e8; /* 背景色 */
+    box-sizing: border-box; /* 设置 box 的形式 */
+    font-size: 16px; /* 字体大小 */
+}
+/* 适应小屏手机 */
+@media (max-width: 768px) {
+    .contact-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,19 @@
+* {
+    margin: 0; /* 外边距 */
+    padding: 0; /* 内边距 */
+    box-sizing: border-box; /* 设置 box 的格式为整体大小包含内外边距 */
+    text-align: center; /* 文本居中 */
+    font-family: "FangSong", "仿宋", serif; /* 设置字体的形式 */
+}
+
+.success-message h1 {
+    font-size: 60px; /* 设置字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
+
+.success-message p {
+    font-size: 32px; /* 设置字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
