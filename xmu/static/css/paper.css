@@ -1,0 +1,33 @@
+/* 设置论文格式 */
+.paper {
+    padding: 10px; /* 内部间距 */
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景，能看到底图 */
+    text-align: center; /* 居中对齐内容 */
+}
+
+/* 调整标题样式 */
+.paper-text h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+    font-weight: bold; /* 加粗 */
+}
+
+/* 调整 paper-item 样式 */
+.paper-columns {
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 列布局 */
+    align-items: center; /* 居中对齐项目 */
+    padding: 0 10px; /* 两边间距 */
+}
+
+.paper-item {
+    display: block; /* block 布局 */
+    font-size: 18px; /* 字体大小 */
+    color: black; /* 文本颜色 */
+    text-decoration: none; /* 去除下划线 */
+    margin-bottom: 10px; /* 底部间距 */
+}
+
+.paper-item:hover {
+    text-decoration: underline; /* 选中的时候显示下划线 */
+}

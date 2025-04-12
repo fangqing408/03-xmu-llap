@@ -1,0 +1,84 @@
+<!-- members.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigator.css' %}">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+    <li><a href="{% url 'login' %}#hero" data-target="hero" onclick="handleNavClick2(event, this)">Home</a></li>
+    <li><a href="{% url 'login' %}#research_directions" data-target="research_directions" onclick="handleNavClick2(event, this)">Research</a></li>
+    <li><a href="{% url 'login' %}#gallery" data-target="gallery" onclick="handleNavClick2(event, this)">Gallery</a></li>
+    <li><a href="{% url 'login' %}#result" data-target="result" onclick="handleNavClick2(event, this)">Result</a></li>
+    <li><a href="{% url 'login' %}#paper" data-target="paper" onclick="handleNavClick2(event, this)">Paper</a></li>
+    <li><a href="{% url 'login' %}#contact" data-target="contact" onclick="handleNavClick2(event, this)">Contact</a></li>
+</ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+</header>
+
+
+<section id="members">
+    <h1>Meet Our Team</h1>
+
+    <!-- 导师部分 -->
+    <div class="mentor">
+        {% for member in members %}
+            {% if member.position == 'Professor' %}
+                <div class="member">
+                    <img src="{{ member.avatar.url }}" alt="{{ member.name }}">
+                    <h2>{{ member.name }}</h2>
+                    <p>Position: {{ member.position }}</p>
+                    <p>Degree: {{ member.degree }}</p>
+                    <p>Email: {{ member.email }}</p>
+                    <p>Education: {{ member.education }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- 分割线 -->
+    <div class="hr"></div>
+
+    <!-- 学生部分 -->
+    <div class="team">
+        {% for member in members %}
+            {% if member.position == 'Member' %}
+                <div class="member">
+                    <img src="{{ member.avatar.url }}" alt="{{ member.name }}">
+                    <h2>{{ member.name }}</h2>
+                    <p>Position: {{ member.position }}</p>
+                    <p>Degree: {{ member.degree }}</p>
+                    <p>Email: {{ member.email }}</p>
+                    <p>Education: {{ member.education }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 FangQing. All Rights Reserved.</p>
+    </footer>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

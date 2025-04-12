@@ -1,0 +1,38 @@
+/* 设置主页 */
+.hero {
+    height: 70vh; /*浏览器窗口的 70% */
+    display: flex; /* flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    text-align: center; /* 文本居中 */
+    color: black; /* 设置为黑色 */
+}
+
+.hero-content h1 {
+    font-size: 60px; /* 设置字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
+
+.hero-content p {
+    font-size: 24px; /* 设置字体大小 */
+    margin-bottom: 30px; /* 底部空隙外边距 */
+}
+
+.cta-button {
+    padding: 12px 25px; /* 内边距 */
+    font-size: 18px; /* 设置字体大小 */
+    background-color: #add8e6; /* 背景色 */
+    color: black; /* 文字颜色设置为黑色 */
+    border: none; /* 不要边框 */
+    cursor: pointer; /* 鼠标移动到上面显示小手指 */
+    border-radius: 10px; /* 圆角 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 选中的时候背景颜色过渡，文字颜色过渡 */
+}
+
+.cta-button:hover {
+    background-color: #bdd8ff; /* 选中状态的背景颜色 */
+    color: white; /* 选中状态白色 */
+}
+
+/* 主页基本上不受当前的设备的影响，直接固定格式就行 */

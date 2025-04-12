@@ -1,0 +1,52 @@
+/* 地址部分的样式 */
+.address-section {
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+    border-radius: 10px; /* 圆角 */
+    padding: 10px; /* 内边距 */
+}
+
+.address-section h2 {
+    font-size: 32px; /* 默认字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+    font-weight: bold; /* 加粗 */
+    text-align: center; /* 文本居中 */
+}
+
+.address-text {
+    font-size: 18px; /* 默认字体大小 */
+    margin-bottom: 20px; /* 底部间距 */
+}
+
+.address-text a {
+    text-decoration: none; /* 去除下划线 */
+    color: black; /* 文本颜色 */
+}
+
+.address-image {
+    max-width: 40%; /* 默认最大宽度 */
+    height: auto; /* 高度自适应 */
+    display: block; /* block 布局 */
+    margin: 0 auto; /* 居中 */
+    border-radius: 8px; /* 圆角 */
+}
+
+/* 适应小屏手机（max-width: 768px） */
+@media (max-width: 768px) {
+    .address-section {
+        padding: 15px; /* 调整内边距 */
+    }
+
+    .address-section h2 {
+        font-size: 24px; /* 手机端标题字体调整 */
+    }
+
+    .address-text {
+        font-size: 16px; /* 手机端字体调整 */
+    }
+
+    .address-image {
+        max-width: 100%; /* 图片宽度占满屏幕 */
+        margin-bottom: 20px; /* 增加底部间距 */
+    }
+}

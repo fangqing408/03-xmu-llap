@@ -1,0 +1,66 @@
+/* 设置联系部分的样式 */
+.contact {
+    padding: 10px 10px; /* 调整内边距，减少顶部空间，适配手机 */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 调整 .contact-container 使其适配不同屏幕 */
+.contact-container {
+    display: flex; /* 使用 flex 布局 */
+    flex-wrap: wrap; /* 允许换行 */
+    margin: 0 auto; /* 居中 */
+    justify-content: center; /* 居中对齐内容 */
+    width: 90%; /* 宽度调整为屏幕的 90% */
+    gap: 20px; /* 内部元素间距减少，适配手机 */
+}
+
+/* 调整 .contact-item 样式，去除白框 */
+.contact-item {
+    padding: 20px; /* 内部间距调整 */
+    border-radius: 8px; /* 圆角 */
+    flex: 1 1 calc(50% - 20px); /* 两列布局，但减去一定的空隙 */
+    max-width: calc(30% - 20px); /* 最大宽度为容器宽度的一半 */
+    box-sizing: border-box; /* 设置 box-sizing 为 border-box */
+    text-align: left; /* 文本左对齐 */
+}
+
+/* 调整按钮和输入框样式 */
+.contact-item button, .contact-item input[type="submit"] {
+    padding: 12px 18px; /* 增加内部间距 */
+    background-color: #333; /* 按钮背景色 */
+    color: #fff; /* 文字颜色 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时改变形态 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 按钮和提交框悬停时样式 */
+.contact-item button:hover, .contact-item input[type="submit"]:hover {
+    background-color: #555; /* 悬停时的背景颜色 */
+}
+
+/* 输入框的格式 */
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* 占满父元素宽度 */
+    padding: 12px; /* 增加内边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #e8e8e8; /* 背景色 */
+    box-sizing: border-box; /* 设置 box-sizing */
+    font-size: 16px; /* 字体大小 */
+}
+
+/* 适配小屏手机（max-width: 768px） */
+@media (max-width: 768px) {
+    .contact-item {
+        flex: 1 1 100%; /* 一列展示，宽度为100% */
+        max-width: 100%; /* 最大宽度为100% */
+        padding: 10px; /* 减少 padding 空间 */
+    }
+
+    .contact-container {
+        width: 90%; /* 容器宽度为屏幕宽度的 90% */
+    }
+}

@@ -1,0 +1,22 @@
+/* 设置研究方向，基本全是文字 */
+.research-content {
+    padding: 5px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    background-color: #f0f0f0; /* 背景色 */
+}
+
+.research-content h3 {
+    font-size: 24px; /* h3 标签的字体大小 */
+    margin-bottom: 15px; /* 底部空隙外边距 */
+}
+
+.research-content ul {
+    list-style: none; /* 去除文字前的符号 */
+    font-size: 18px; /* 字体大小 */
+
+}
+.research_directions h2 {
+    padding: 80px 0px 0px 0px; /* 增加顶部间距，露出背景图，跳转的时候正好露出标题 */
+    font-size: 32px; /* h2 标签的字体大小 */
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景，能看到底图 */
+}

@@ -1,0 +1,36 @@
+/* 设置结果展示 */
+.result {
+    padding: 10px; /* 整个类的 padding */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+.result-row {
+    display: block; /* block 布局 */
+}
+
+.result-row .result-item {
+    width: 50%; /* 每个 item 占一行 */
+    margin: 20px auto; /* 每个 box 上下间距，左右相同，放在中间 */
+}
+
+.result-row .result-item img {
+    width: 100%; /* 占掉 box 的所有 */
+    height: auto; /* 高度自适应 */
+}
+
+.result-text h2 {
+    font-size: 32px; /* h2 标签的字体大小 */
+}
+
+@media (max-width: 768px) {
+    /* 调整 result-item 的宽度和排列方式 */
+    .result-row .result-item {
+        width: 100%; /* 在手机端每个 item 占满一行 */
+    }
+
+    /* 调整字体大小 */
+    .result-text h2 {
+        font-size: 24px; /* 手机端标题字体大小 */
+    }
+}

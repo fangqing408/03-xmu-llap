@@ -1,0 +1,141 @@
+/* 设置导航栏 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #add8e6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+}
+
+header .logo img {
+    width: 50%;
+    display: block;
+    margin-left: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0px 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 12px 6px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #bdd8ff;
+    color: #fff;
+}
+
+nav ul li a.active {
+    background-color: #bdd8ff;
+    color: #fff;
+}
+
+/* 下拉菜单 */
+nav ul li .dropdown {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li .dropdown .arrow {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li .dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav ul li .dropdown-content li {
+    padding: 10px 20px;
+}
+
+nav ul li .dropdown-content li a {
+    color: #000;
+}
+
+/* 鼠标悬停时显示下拉菜单 */
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* 汉堡菜单 */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hamburger-menu .line {
+    height: 5px;
+    background-color: gray;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+/* 移动端菜单展示 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #add8e6;
+        padding: 10px 0;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+    }
+
+    .hamburger-menu {
+        display: flex; /* 在小屏幕上显示汉堡按钮 */
+    }
+}

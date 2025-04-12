@@ -1,0 +1,51 @@
+/* 设置图片展示 */
+.gallery {
+    padding: 10px 10px 70px 10px; /* 整个类的 padding，左右减少空间 */
+    background-color: #f9f9f9; /* 背景色 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 调整标题 */
+.gallery h2 {
+    font-size: 32px; /* 默认字体大小 */
+    margin-bottom: 20px; /* 底部空隙外边距 */
+    font-weight: bold; /* 加粗 */
+}
+
+/* 添加媒体查询调整字体大小 */
+@media (max-width: 768px) {
+    .gallery h2 {
+        font-size: 24px; /* 在小屏幕下调整标题字体大小 */
+    }
+    .gallery {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+/* 设置图片行 */
+.gallery-row {
+    display: flex; /* flex 布局 */
+    justify-content: center; /* 水平居中 */
+    flex-wrap: wrap; /* 允许换行 */
+}
+
+/* 每个图片的样式 */
+.gallery-row .gallery-item {
+    width: 20%; /* 每个 item 的宽度 */
+    margin: 0 1%; /* 左右间距 */
+}
+
+/* 图片自适应 */
+.gallery-row .gallery-item img {
+    width: 100%; /* 每个图片占 item 宽度的100% */
+    height: 100%; /* 高度根据宽度自适应 */
+    object-fit: cover; /* 保持图片比例，裁剪超出的部分 */
+}
+
+/* 添加媒体查询调整图片显示方式，适应小屏幕 */
+@media (max-width: 768px) {
+    .gallery-row .gallery-item {
+        width: 80%; /* 每个图片在手机上竖着排，占满整个行 */
+        margin-bottom: 70px; /* 每个图片下方增加一些间距 */
+    }
+}

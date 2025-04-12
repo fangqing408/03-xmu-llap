@@ -1,0 +1,127 @@
+/* members.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, "Segoe UI", "PingFang SC", sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 3px;  /* 更粗的分割线 */
+    background: linear-gradient(to right, #add8e6, #bdd8ff);  /* 渐变色分割线 */
+    border: none;
+}
+
+/* 底部导航栏 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #add8e6;
+    color: white;
+}
+
+#members {
+    padding: 100px;
+    text-align: center;
+    background-color: white;
+}
+
+#members h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* 导师样式 */
+.mentor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mentor .member {
+    width: 60%;  /* 导师的宽度占据更大的比例 */
+}
+
+.mentor img {
+    width: 180px;  /* 增大导师头像 */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.mentor h2 {
+    font-size: 2.5rem;  /* 导师名字更大 */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.mentor p {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+/* 学生样式 */
+.team {
+    display: flex;
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: center;  /* 居中学生成员 */
+    gap: 200px;  /* 控制学生之间的间距 */
+    margin-top: 20px;
+}
+
+/* 每个成员的样式 */
+.member {
+    width: 220px;  /* 增大成员的宽度 */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.member img {
+    width: 120px;  /* 增大头像 */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.member h2 {
+    font-size: 2rem;  /* 增大名字 */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.member p {
+    font-size: 1.4rem;  /* 增大文字 */
+    color: #555;
+}
+
+/* 响应式布局：手机上每行一个 */
+@media (max-width: 768px) {
+    .team {
+        flex-direction: column;  /* 在手机上每行显示一个学生 */
+        gap: 5px;  /* 减小学生之间的间隙 */
+    }
+
+    .member, .mentor .member {
+        width: 90%;  /* 让成员的宽度稍微宽一点 */
+    }
+
+    .mentor h2 {
+        font-size: 2rem;  /* 导师名字较小 */
+    }
+
+    .mentor p {
+        font-size: 1.2rem;  /* 导师文本较小 */
+    }
+}

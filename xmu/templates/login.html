@@ -3,40 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xmu</title>
+    <title>LLAP</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/address.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/paper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/research.css' %}">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
 </head>
 <body>
     <!-- Navigator -->
     <header>
-        <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" data-target="hero" onclick="handleNavClick(event, this)">Home</a></li>
-                <li><a href="#" data-target="research_directions" onclick="handleNavClick(event, this)">Research Directions</a></li>
-                <li><a href="#" data-target="gallery" onclick="handleNavClick(event, this)">Gallery</a></li>
-                <li><a href="#" data-target="result" onclick="handleNavClick(event, this)">Result</a></li>
-                <li><a href="#" data-target="paper" onclick="handleNavClick(event, this)">Paper</a></li>
-                <li><a href="#" data-target="contact" onclick="handleNavClick(event, this)">Contact</a></li>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#" data-target="hero" onclick="handleNavClick(event, this)">Home</a></li>
+            <li><a href="#" data-target="research_directions" onclick="handleNavClick(event, this)">Research</a></li>
+            <li><a href="#" data-target="gallery" onclick="handleNavClick(event, this)">Gallery</a></li>
+            <li><a href="#" data-target="result" onclick="handleNavClick(event, this)">Result</a></li>
+            <li><a href="#" data-target="paper" onclick="handleNavClick(event, this)">Paper</a></li>
+            <li><a href="#" data-target="contact" onclick="handleNavClick(event, this)">Contact</a></li>
 
-                <li><a href="#dropdown" class="dropdown">Dropdown <span class="arrow">&#9660;</span></a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+            <li><a href="#" class="dropdown" onclick="toggleDropdown(event)">About Us<span class="arrow">&#9660;</span></a>
+                <ul class="dropdown-content">
+                    <li><a href="{% url 'members' %}" class="dropdown">Members</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+</header>
+
 
     <!-- Home Section-->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1 style="color: black;">Welcome to Xmu</h1>
-            <p>xxx</p>
+            <h1 style="color: black;">Welcome to Xmu-LLAP</h1>
+            <p>"If I have seen further it is by standing on the shoulders of giants." -- Isaac Newton</p>
             <button class="cta-button" data-target="research_directions" onclick="handleNavClick(event, this)">Get Started</button>
         </div>
     </section>
@@ -45,42 +59,31 @@
     <!-- 研究方向没加链接，或者纯文本，不需要数据库 -->
     <section id="research_directions" class="research_directions">
         <h2>Research Directions</h2>
+        {% for direction in directions %}
         <div class="research-content">
-            <h3>Fiber Nonlinearities</h3>
             <ul>
-                <li>– Space-time duality</li>
-                <li>• Parametric amplified spectro-temporal analyzer (PASTA)/ROSTA</li>
-                <li>• Temporal ghost imaging</li>
-                <li>• Talbot effect for temporal cloaking and noiseless amplification</li>
-                <li>– Wavelength-encoded tomography (WET)</li>
-                <li>• Temporal multiplication (TEAM)</li>
-                <li>• WET applications with improved resolution and sensitivity</li>
+                <!-- 这里可以将研究方向的细节按需求填充 -->
+                <li>– {{ direction.direction_name }}</li>
             </ul>
         </div>
+    {% endfor %}
     </section>
     <div class="hr">
     </div>
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-row">
-            <div class="gallery-item">
-                <img src="{% static 'images/p1.jpg' %}" alt="Image 1">
-                <p>"xxx"</p>
-                <h3>xxx</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'images/p2.jpg' %}" alt="Image 2">
-                <p>"xxx"</p>
-                <h3>xxx</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'images/p3.jpg' %}" alt="Image 3">
-                <p>"xxx"</p>
-                <h3>xxx</h3>
-            </div>
+
+<section id="gallery" class="gallery">
+    <h2>Gallery of Scientific Research</h2>
+    <div class="gallery-row">
+        {% for image in galleryimages %}
+        <div class="gallery-item">
+            <img src="{{ image.image.url }}" alt="Image {{ forloop.counter }}">
+            <h3>- {{ image.description|slice:":20" }}</h3>
         </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
+
     <!-- hr -->
     <div class="hr"></div>
     <!-- Result Section -->
@@ -89,16 +92,13 @@
             <h2>The result of our research</h2>
         </div>
         <div class="result-row">
-            <div class="result-item">
-                <img src="{% static 'images/12.png' %}" alt="Image 4">
-            </div>
-            <div class="result-item">
-                <img src="{% static 'images/11.png' %}" alt="Image 5">
-            </div>
-            <div class="result-item">
-                <img src="{% static 'images/p10.png' %}" alt="Image 6">
-            </div>
+        {% for image in resultimages %}
+        <div class="result-item">
+            <img src="{{ image.image.url }}" alt="Image {{ forloop.counter }}">
+<!--            <h3>- {{ image.description|slice:":20" }}</h3>-->
         </div>
+        {% endfor %}
+    </div>
     </section>
     <!-- Paper Section -->
     <!-- 链接到数据库，论文可更新 -->
@@ -109,7 +109,7 @@
         <div class="paper-columns">
             {% for paper in papers %}
                 <a href="{{ paper.link }}" target="_blank" class="paper-item">
-                    • {{ paper.title }} - {{ paper.authors }}
+                    • {{ paper.title }} - {{ paper.authors }} - {{ paper.published_date }}
                 </a>
             {% endfor %}
         </div>
@@ -118,45 +118,48 @@
         <div class="address-section">
             <h2>Contact Us</h2>
             <p class="address-text">
-                欢迎来校参观，本校的地址在福建省厦门市翔安区厦门大学
-                <a href="https://ditu.amap.com/place/B02500VK5M" target="_blank"><strong>翔安校区</strong></a>
+                "Welcome to visit our campus. The address of our school is "
+                <a href="https://ditu.amap.com/place/B02500VK5M" target="_blank"><strong>Xiamen University, Xiang'an Campus</strong></a>
+                ", Xiang'an District, Xiamen City, Fujian Province."
             </p>
             <img src="{% static 'images/ip.png' %}" alt="校园图片" class="address-image">
         </div>
     </section>
     <!-- Contact Section -->
     <section class="contact">
-        <div class="contact-container">
-            <div class="contact-item">
-                <h3>联系我们</h3>
-                <form id="contact-form" method="post" action="{% url 'submit_contact' %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="name">姓名（必填）：</label>
-                        <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">电子邮件（必填）：</label>
-                        <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">电话：</label>
-                        <input type="text" id="phone" name="phone" placeholder="请输入您的电话">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">留言：</label>
-                        <textarea id="message" name="message" rows="5" placeholder="请输入您的留言内容"></textarea>
-                    </div>
-                    <input type="submit" value="发送消息">
-                </form>
-            </div>
-            <div class="contact-item">
-                <h3>招聘</h3>
-                <p>查看我们当前的职位空缺，加入我们的团队。</p>
-                <button onclick="handleEmployment()">查看职位</button>
-            </div>
+    <div class="contact-container">
+        <div class="contact-item">
+            <h3>Contact Us</h3>
+            <form id="contact-form" method="post" action="{% url 'submit_contact' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name (Required):</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Required):</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+                </div>
+                <input type="submit" value="Send Message">
+            </form>
         </div>
-    </section>
+        <div class="contact-item">
+            <h3>Get in Touch</h3>
+            <p>If you have any inquiries or would like to reach out, feel free to contact me directly:</p>
+            <p>Xiamen University, Xiamen, China</p>
+            <p>Email: hshe@connect.hku.hk</p>
+        </div>
+    </div>
+</section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 FangQing. All Rights Reserved.</p>

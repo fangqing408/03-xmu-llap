@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['82.157.169.102', 'localhost', '127.0.0.1']
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Application definition
 
 INSTALLED_APPS = [
