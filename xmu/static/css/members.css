@@ -29,7 +29,7 @@ footer {
 }
 
 #members {
-    padding: 100px 200px 30px 200px;
+    padding: 100px 20px 30px 20px;  /* 更加适配不同设备 */
     text-align: center;
     background-color: white;
 }
@@ -44,7 +44,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* 居中学生成员 */
+    justify-content: center;
     align-items: center;
     margin-bottom: 40px;
 }
@@ -77,7 +77,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 40px; /* 左右间距 */
+    gap: 20px;  /* 调整左侧和右侧间距 */
     margin-bottom: 40px;
 }
 
@@ -86,9 +86,8 @@ footer {
     flex: 0 1 calc(33.333% - 20px);  /* 每行最多3个，减去 gap */
     max-width: 400px;
     text-align: center;
-    margin: 0 auto; /* 加 auto 可以让单个成员居中 */
+    margin: 0 auto;
 }
-
 
 .member img {
     width: 120px;  /* 增大头像 */
@@ -105,18 +104,22 @@ footer {
 }
 
 .member p {
-    font-size: 1.4rem;  /* 增大文字 */
+    font-size: 1.4rem;
     color: #555;
 }
 
 /* 响应式布局：手机上每行一个 */
 @media (max-width: 768px) {
-    .team {
-        flex-direction: column;  /* 在手机上每行显示一个学生 */
-        gap: 5px;  /* 减小学生之间的间隙 */
+    #members {
+        padding: 80px 20px 30px 20px;  /* 减少左右的 padding 让空间更大 */
     }
 
-    .member, .mentor .member {
+    .team {
+        flex-direction: column;  /* 在手机上每行显示一个学生 */
+        gap: 15px;  /* 减小学生之间的间隙 */
+    }
+
+    .member {
         width: 90%;  /* 让成员的宽度稍微宽一点 */
     }
 
