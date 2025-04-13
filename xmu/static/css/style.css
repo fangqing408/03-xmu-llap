@@ -12,7 +12,7 @@ body {
     line-height: 1.6; /* 设置行高 */
     text-align: center;  /* 文本居中 */
 
-    background-image: url('../images/bg.jpg'); /* 设置背景图 */
+    background-image: url('{{conf.avatar.url}}'); /* 设置背景图 */
     background-size: cover; /* 填满屏幕，可以剪切 */
     background-repeat: no-repeat; /* 不重复填充 */
     background-position: center center; /* 居中显示 */

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/result.css' %}">
 </head>
 <body>
+    <style> body { background-image: url("{{ conf.avatar.url }}"); } </style>
     <!-- Navigator -->
     <header>
     <div class="logo">
@@ -50,7 +51,7 @@
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1 style="color: black;">Welcome to Xmu-LLAP</h1>
-            <p>"If I have seen further it is by standing on the shoulders of giants." -- Isaac Newton</p>
+            <p>{{conf.quote}} -- {{conf.author}}</p>
             <button class="cta-button" data-target="research_directions" onclick="handleNavClick(event, this)">Get Started</button>
         </div>
     </section>

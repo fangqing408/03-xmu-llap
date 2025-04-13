@@ -73,3 +73,18 @@ class Member(models.Model):
     def __str__(self):
         return self.name
 
+
+from django.db import models
+
+
+class BackgroundImage(models.Model):
+    avatar = models.ImageField(upload_to='bg/', blank=True, null=True, default='logo.jpg')
+    weight = models.IntegerField(default=0)  # 新增字段，用于权重排序
+    quote = models.TextField(blank=True, null=True, default='If I have seen further it is by standing on the shoulders of giants.')
+    author = models.CharField(blank=True, null=True, max_length=100, default='Isaac Newton')
+    created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f"Quote by {self.author}"
+
+
+

@@ -8,10 +8,11 @@ def login(request):
     directions = ResearchDirection.objects.all()
     galleryimages = GalleryImage.objects.order_by('-weight')[:3]  # 取 weight 最大的 3 张图
     resultimages = ResultImage.objects.order_by('-weight')[:4]
-    return render(request, 'login.html', {'papers': papers, 'directions': directions, 'galleryimages': galleryimages, 'resultimages': resultimages})
+    conf = BackgroundImage.objects.order_by('-weight').first()
+    return render(request, 'login.html', {'papers': papers, 'directions': directions, 'galleryimages': galleryimages, 'resultimages': resultimages, 'conf': conf})
 
 from django.shortcuts import render, redirect
-from .models import ContactMessage, Paper, ResearchDirection, GalleryImage, ResultImage, Member
+from .models import ContactMessage, Paper, ResearchDirection, GalleryImage, ResultImage, Member, BackgroundImage
 
 
 def submit_contact(request):
