@@ -1,0 +1,47 @@
+nohup: ignoring input
+[uWSGI] getting INI configuration from Web_uwsgi.ini
+*** Starting uWSGI 2.0.28 (64bit) on [Thu Apr 10 16:33:08 2025] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-44) on 10 April 2025 07:18:19
+os: Linux-3.10.0-1160.119.1.el7.x86_64 #1 SMP Tue Jun 4 14:43:51 UTC 2024
+nodename: VM-8-12-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/Web
+detected binary path: /envs/xmu/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7908
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.9.10 (main, Apr 10 2025, 14:42:30)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+PEP 405 virtualenv detected: /envs/xmu/
+Set PythonHome to /envs/xmu/
+Python main interpreter initialized at 0x1287aa0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1287aa0 pid: 4305 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 4305, cores: 1)
+spawned uWSGI worker 2 (pid: 4306, cores: 1)
+spawned uWSGI worker 3 (pid: 4307, cores: 1)
+spawned uWSGI worker 4 (pid: 4308, cores: 1)
+[pid: 4308|app: 0|req: 1/1] 39.144.169.150 () {42 vars in 865 bytes} [Thu Apr 10 08:33:43 2025] GET / => generated 7216 bytes in 61 msecs (HTTP/1.1 200) 8 headers in 358 bytes (1 switches on core 0)
+Gracefully killing worker 3 (pid: 4307)...
+Gracefully killing worker 4 (pid: 4308)...
+Gracefully killing worker 1 (pid: 4305)...
+Gracefully killing worker 2 (pid: 4306)...
