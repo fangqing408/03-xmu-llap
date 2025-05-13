@@ -3,10 +3,10 @@
 
 # 搭建步骤
 
-- 001 >> [前后端代码编写]()
-- 002 >> [服务器讲解]()
-- 003 >> [服务器环境配置]()
-- 004 >> [sqlite3 配置讲解]()
-- 005 >> [连接 github 云端本地联系]()
-- 006 >> [screen 管理服务器]()
-- 007 >> [上线&启动]()
+- 001 >> [前后端代码编写](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/001.md)
+- 002 >> [服务器讲解](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/002.md)
+- 003 >> [服务器环境配置](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/003.md)
+- 004 >> [sqlite3 配置讲解](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/004.md)
+- 005 >> [连接 github 云端本地联系](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/005.md)
+- 006 >> [screen 管理服务器](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/006.md)
+- 007 >> [上线&启动](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/007.md)
