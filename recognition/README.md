@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a32b7b1e-c9ba-4a45-b84b-99fc46a7a604)# 03-xmu-llap
+# 03-xmu-llap
 
 
 # 搭建步骤
