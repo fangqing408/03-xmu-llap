@@ -1,10 +1,10 @@
-# 03-xmu-llap
+![image](https://github.com/user-attachments/assets/a32b7b1e-c9ba-4a45-b84b-99fc46a7a604)# 03-xmu-llap
 
 
 # 搭建步骤
 
 - 001 >> [前后端代码编写](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/001.md)
-- 002 >> [服务器讲解](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/002.md)
+- 002 >> [服务器配置-本地 SSH 连接服务器](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/002.md)
 - 003 >> [服务器环境配置](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/003.md)
 - 004 >> [sqlite3 配置讲解](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/004.md)
 - 005 >> [连接 github 云端本地联系](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/005.md)
