@@ -1,7 +1,7 @@
 # 03-xmu-llap
 
 
-# 搭建步骤
+## 搭建步骤
 
 - 001 >> [前后端代码编写](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/001.md)
 - 002 >> [服务器配置-本地 SSH 连接服务器](https://github.com/fangqing408/03-xmu-llap/blob/master/recognition/002.md)
