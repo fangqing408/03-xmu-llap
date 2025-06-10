@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>文件上传中转站</title>
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>📁 文件上传中转站</h2>
+
+        <div class="upload-box">
+            <form method="post" enctype="multipart/form-data" class="upload-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="upload-button">⬆ 上传</button>
+            </form>
+        </div>
+
+        <h3>📄 最近上传的文件</h3>
+        {% for file in files %}
+        <div class="file-entry">
+            <div class="file-info">
+                {% with ext=file.file_ext %}
+                    <img class="file-icon"
+                         src="{% static 'images/'|add:ext|add:'.png' %}"
+                         onerror="this.src='{% static 'images/default.png' %}'"
+                         alt="icon">
+                {% endwith %}
+                <div class="file-text">
+                    <span class="file-title">{{ file.title }}</span>
+                    <small class="file-time">上传时间：{{ file.uploaded_at|date:"Y-m-d H:i" }}</small>
+                </div>
+            </div>
+            <a href="{% url 'download_file' file.id %}" class="download-button">⬇ 下载</a>
+        </div>
+        {% empty %}
+            <p>暂无文件。</p>
+        {% endfor %}
+    </div>
+    {% if not show_all and files|length >= 10 %}
+    <div class="load-more">
+        <a href="?all=1" class="load-more-button">显示更多...
+        </a>
+    </div>
+    {% endif %}
+
+</body>
+</html>

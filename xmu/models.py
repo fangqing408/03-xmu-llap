@@ -86,5 +86,25 @@ class BackgroundImage(models.Model):
     def __str__(self):
         return f"Quote by {self.author}"
 
+import os
+from django.db import models
+
+def user_directory_path(instance, filename):
+    ext = filename.split('.')[-1].lower()
+    return f'files/{ext}/{filename}'  # 存储路径：media/pdf/example.pdf
+
+class UploadedFile(models.Model):
+    file = models.FileField(upload_to=user_directory_path)
+    title = models.CharField(max_length=255)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title  # ✅ 显示文件名而不是 "UploadedFile object (2)"
+
+    def filename(self):
+        return os.path.basename(self.file.name)
+
+    def file_ext(self):
+        return os.path.splitext(self.file.name)[1][1:].lower()
 
 
